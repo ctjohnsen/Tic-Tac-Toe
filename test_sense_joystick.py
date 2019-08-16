@@ -63,26 +63,28 @@ def tic_tac():
     def choose_numb():
         while True:
             for event in sense.stick.get_events():
-                if event.action == 'pressed':
+                if event.action == 'pressed' and event.direction == 'middle':
                     return 4
                 if event.action == 'pressed' and event.direction == 'up':
-                    if event.action == 'pressed' and event.direction == 'right':
-                        return 8
-                    if event.action == 'pressed' and event.direction == 'left':
-                        return 6
-                    if event.action == 'pressed' and event.direction == 'pressed':
-                        return 7
+                    for event in sense.stick.get_events():
+                        if event.action == 'pressed' and event.direction == 'right':
+                            return 6
+                            if event.action == 'pressed' and event.direction == 'left':
+                                return 8
+                                if event.action == 'pressed' and event.direction == 'middle':
+                                    return 7
                 if event.action == 'pressed' and event.direction == 'down':
-                    if event.action == 'pressed' and event.direction == 'right':
-                        return 2
-                    if event.action == 'pressed' and event.direction == 'left':
-                        return 0
-                    if event.action == 'pressed' and event.direction == 'pressed':
-                        return 1
+                    for event in sense.stick.get_events():
+                        if event.action == 'pressed' and event.direction == 'right':
+                            return 0
+                            if event.action == 'pressed' and event.direction == 'left':
+                                return 2
+                                if event.action == 'pressed' and event.direction == 'middle':
+                                    return 1
                 if event.action == 'pressed' and event.direction == 'right':
-                    return 5
-                if event.action == 'pressed' and event.direction == 'left':
                     return 3
+                if event.action == 'pressed' and event.direction == 'left':
+                    return 5
 
         # while True:
         #     try:
