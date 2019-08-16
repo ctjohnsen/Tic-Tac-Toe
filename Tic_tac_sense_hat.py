@@ -3,11 +3,11 @@
 **Author:** Christoffer Thorske Johnsen
 **Created:** 04.01.2019
 """
-from sense_hat import SenseHat
+
 import time
+from sense_hat import SenseHat
 
 sense = SenseHat()
-
 
 
 def tic_tac():
@@ -28,13 +28,13 @@ def tic_tac():
     W, W, B, W, W, B, W, W
     ]
 
-   
+
     opp_del = ([6, 7, 14, 15], [3, 4, 11, 12], [0, 1, 8, 9],
                [30, 31, 38, 39], [27, 28, 35, 36],  [24, 25, 32, 33],
                [54, 55, 62, 63], [51, 52, 59, 60], [48, 49, 56, 57])
 
-      
-    
+
+
     win_pos = ((0, 3, 6), (24, 27, 30), (48, 51, 54), (0, 3, 6), (3, 27, 51),
                (6, 30, 54), (0, 27, 54), (6, 27, 48))
     end = False
@@ -110,4 +110,3 @@ def tic_tac():
         print()
 
 tic_tac()
-
