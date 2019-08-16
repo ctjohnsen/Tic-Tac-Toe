@@ -65,39 +65,28 @@ def tic_tac():
             for event in sense.stick.get_events():
                 if event.action == 'pressed' and event.direction == 'middle':
                     return 4
-                if event.action == 'pressed' and event.direction == 'up':
+                elif event.action == 'released' and event.direction == 'up':
                     while True:
-                        for event_up in sense.stick.get_events():
-                            if event_up.action == 'pressed' and event.direction == 'right':
-                                return 6
-                            if event_up.action == 'pressed' and event.direction == 'left':
-                                return 8
-                            if event_up.action == 'pressed' and event.direction == 'middle':
-                                return 7
-                if event.action == 'pressed' and event.direction == 'down':
-                    while True:
-                        for event_do in sense.stick.get_events():
-                            if event_do.action == 'pressed' and event.direction == 'right':
+                        for event in sense.stick.get_events():
+                            if event.action == 'pressed' and event.direction == 'right':
                                 return 0
-                            if event_do.action == 'pressed' and event.direction == 'left':
+                            if event.action == 'pressed' and event.direction == 'left':
                                 return 2
-                            if event_do.action == 'pressed' and event.direction == 'middle':
+                            if event.action == 'pressed' and event.direction == 'middle':
                                 return 1
-                if event.action == 'pressed' and event.direction == 'right':
+                elif event.action == 'released' and event.direction == 'down':
+                    while True:
+                        for event in sense.stick.get_events():
+                            if event.action == 'pressed' and event.direction == 'right':
+                                return 6
+                            if event.action == 'pressed' and event.direction == 'left':
+                                return 8
+                            if event.action == 'pressed' and event.direction == 'middle':
+                                return 7
+                elif event.action == 'pressed' and event.direction == 'right':
                     return 3
-                if event.action == 'pressed' and event.direction == 'left':
+                elif event.action == 'pressed' and event.direction == 'left':
                     return 5
-
-        # while True:
-        #     try:
-        #         a = int(input('\n Choose a number: '))
-        #         if a in range(1,10):
-        #             a -= 1
-        #             return a
-        #         else:
-        #             print('Not on the board')
-        #     except ValueError:
-        #         print('Not a number')
 
     def win():
         for a, b, c in win_pos:
