@@ -66,21 +66,21 @@ def tic_tac():
                 if event.action == 'pressed' and event.direction == 'middle':
                     return 4
                 if event.action == 'pressed' and event.direction == 'up':
-                    for event in sense.stick.get_events():
-                        if event.action == 'pressed' and event.direction == 'right':
+                    for event_up in sense.stick.get_events():
+                        if event_up.action == 'pressed' and event.direction == 'right':
                             return 6
-                            if event.action == 'pressed' and event.direction == 'left':
-                                return 8
-                                if event.action == 'pressed' and event.direction == 'middle':
-                                    return 7
+                        if event_up.action == 'pressed' and event.direction == 'left':
+                            return 8
+                        if event_up.action == 'pressed' and event.direction == 'middle':
+                            return 7
                 if event.action == 'pressed' and event.direction == 'down':
-                    for event in sense.stick.get_events():
-                        if event.action == 'pressed' and event.direction == 'right':
+                    for event_do in sense.stick.get_events():
+                        if event_do.action == 'pressed' and event.direction == 'right':
                             return 0
-                            if event.action == 'pressed' and event.direction == 'left':
-                                return 2
-                                if event.action == 'pressed' and event.direction == 'middle':
-                                    return 1
+                        if event_do.action == 'pressed' and event.direction == 'left':
+                            return 2
+                        if event_do.action == 'pressed' and event.direction == 'middle':
+                            return 1
                 if event.action == 'pressed' and event.direction == 'right':
                     return 3
                 if event.action == 'pressed' and event.direction == 'left':
