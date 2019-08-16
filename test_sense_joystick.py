@@ -65,23 +65,23 @@ def tic_tac():
             for event in sense.stick.get_events():
                 if event.action == 'pressed':
                     return 4
-                if event.direction == 'up':
-                    if event.direction == 'right':
+                if event.action == 'pressed' and event.direction == 'up':
+                    if event.action == 'pressed' and event.direction == 'right':
                         return 8
-                    if event.direction == 'left':
+                    if event.action == 'pressed' and event.direction == 'left':
                         return 6
-                    if event.direction == 'pressed':
+                    if event.action == 'pressed' and event.direction == 'pressed':
                         return 7
-                if event.direction == 'down':
-                    if event.direction == 'right':
+                if event.action == 'pressed' and event.direction == 'down':
+                    if event.action == 'pressed' and event.direction == 'right':
                         return 2
-                    if event.direction == 'left':
+                    if event.action == 'pressed' and event.direction == 'left':
                         return 0
-                    if event.direction == 'pressed':
+                    if event.action == 'pressed' and event.direction == 'pressed':
                         return 1
-                if event.direction == 'right':
+                if event.action == 'pressed' and event.direction == 'right':
                     return 5
-                if event.direction == 'left':
+                if event.action == 'pressed' and event.direction == 'left':
                     return 3
 
         # while True:
