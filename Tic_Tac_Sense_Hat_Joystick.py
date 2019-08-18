@@ -44,22 +44,23 @@ def tic_tac():
 
     def pl_1():
         n = choose_numb()
-        for i in opp_del[n]:
-            if brett[i] == [255, 0, 0] or brett[i] == [0, 0, 255]:
-                print('The place is not free!')
-                pl_1()
-            else:
-                brett[i] = [255, 0, 0]
+        i = opp_del[n][0]
+        if brett[i] == [255, 0, 0] or brett[i] == [0, 0, 255]:
+            print('The place is not free!')
+            pl_1()
+        else:
+            for j in opp_del[n]:
+                brett[j] = [255, 0, 0]
 
     def pl_2():
         n = choose_numb()
-        for i in opp_del[n]:
-            if brett[i] == [255, 0, 0] or brett[i] == [0, 0, 255]:
-                print('The place is not free!')
-                pl_2()
-            else:
-                brett[i] = [0, 0, 255]
-
+        i = opp_del[n][0]
+        if brett[i] == [255, 0, 0] or brett[i] == [0, 0, 255]:
+            print('The place is not free!')
+            pl_2()
+        else:
+            for j in opp_del[n]:
+                brett[j] = [255, 0, 0]
     def choose_numb():
         while True:
             for event in sense.stick.get_events():
