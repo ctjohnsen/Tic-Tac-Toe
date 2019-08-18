@@ -43,8 +43,9 @@ def tic_tac():
         sense.set_pixels(brett)
 
     def pl_1():
+        sense.set_rotation(180)
         sense.show_letter("1")
-        time.sleep(0.4)
+        time.sleep(0.6)
         sense.set_pixels(brett)
         n = choose_numb()
         i = opp_del[n][0]
@@ -56,6 +57,10 @@ def tic_tac():
                 brett[j] = [255, 0, 0]
 
     def pl_2():
+        sense.set_rotation(180)
+        sense.show_letter("2")
+        time.sleep(0.6)
+        sense.set_pixels(brett)
         n = choose_numb()
         i = opp_del[n][0]
         if brett[i] == [255, 0, 0] or brett[i] == [0, 0, 255]:
