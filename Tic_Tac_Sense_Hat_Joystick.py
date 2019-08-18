@@ -60,7 +60,7 @@ def tic_tac():
             pl_2()
         else:
             for j in opp_del[n]:
-                brett[j] = [255, 0, 0]
+                brett[j] = [0, 0, 255]
     def choose_numb():
         while True:
             for event in sense.stick.get_events():
