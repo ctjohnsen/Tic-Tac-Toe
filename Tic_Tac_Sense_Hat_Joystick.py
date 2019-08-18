@@ -46,6 +46,7 @@ def tic_tac():
         sense.set_rotation(180)
         sense.show_letter("1")
         time.sleep(0.6)
+        sense.set_rotation(180)
         sense.set_pixels(brett)
         n = choose_numb()
         i = opp_del[n][0]
@@ -60,6 +61,7 @@ def tic_tac():
         sense.set_rotation(180)
         sense.show_letter("2")
         time.sleep(0.6)
+        sense.set_rotation(180)
         sense.set_pixels(brett)
         n = choose_numb()
         i = opp_del[n][0]
