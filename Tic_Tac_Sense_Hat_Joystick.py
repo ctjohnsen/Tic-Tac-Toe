@@ -74,28 +74,28 @@ def tic_tac():
             for event in sense.stick.get_events():
                 if event.action == 'pressed' and event.direction == 'middle':
                     return 4
-                elif event.action == 'released' and event.direction == 'up':
-                    while True:
-                        for event in sense.stick.get_events():
-                            if event.action == 'pressed' and event.direction == 'right':
-                                return 0
-                            if event.action == 'pressed' and event.direction == 'left':
-                                return 2
-                            if event.action == 'pressed' and event.direction == 'middle':
-                                return 1
                 elif event.action == 'released' and event.direction == 'down':
                     while True:
                         for event in sense.stick.get_events():
                             if event.action == 'pressed' and event.direction == 'right':
-                                return 6
+                                return 2
                             if event.action == 'pressed' and event.direction == 'left':
+                                return 0
+                            if event.action == 'pressed' and event.direction == 'middle':
+                                return 1
+                elif event.action == 'released' and event.direction == 'up':
+                    while True:
+                        for event in sense.stick.get_events():
+                            if event.action == 'pressed' and event.direction == 'right':
                                 return 8
+                            if event.action == 'pressed' and event.direction == 'left':
+                                return 6
                             if event.action == 'pressed' and event.direction == 'middle':
                                 return 7
                 elif event.action == 'pressed' and event.direction == 'right':
-                    return 3
-                elif event.action == 'pressed' and event.direction == 'left':
                     return 5
+                elif event.action == 'pressed' and event.direction == 'left':
+                    return 3
 
     def win():
         for a, b, c in win_pos:
@@ -120,7 +120,6 @@ def tic_tac():
             break
         print("Player 1 choose where to place red marke")
         pl_1()
-        print()
         draw_brett()
         end = win()
         if end == True:
@@ -132,6 +131,6 @@ def tic_tac():
             break
         print("Player 2 choose where to place blue marke")
         pl_2()
-        print()
+
 
 tic_tac()
